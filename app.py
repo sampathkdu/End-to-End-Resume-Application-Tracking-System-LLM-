@@ -9,7 +9,8 @@ import json
 load_dotenv() 
 
 # API Key Configuration
-genai.configure(api_key="AIzaSyBrBPg5fQTwSJvFcV7niFr4ZevUsqyVwsM")
+#genai.configure(api_key="")
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 
 # Display the sidebar content
