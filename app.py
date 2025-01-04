@@ -126,7 +126,16 @@ if submit:
             # Get the response from the AI model
             response = get_gemini_response(jd, resume_text)
             
-            # Display the response
-            st.subheader(response)
+            # Parse the response (assuming it's in JSON format)
+            response_data = json.loads(response)
+            
+            # Display the response line by line
+            st.subheader("Response Details:")
+            st.text(f"JD Match: {response_data['JD Match']}")
+            st.text("Missing Keywords:")
+            for keyword in response_data['MissingKeywords']:
+                st.text(f"- {keyword}")
+            st.text("Profile Summary:")
+            st.text(response_data['ProfileSummary'])
     else:
         st.subheader("Please provide both a job description and a resume.")
