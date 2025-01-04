@@ -27,17 +27,17 @@ st.sidebar.markdown("""
      
     <hr>
 
-    - **Name:** Jayathilaka P.J.L. 
+    - **Name:** Jayathilaka P.J.L. <br>
     **Student No:** EC/2020/027 
     
     <hr>
 
-    - **Name:** Magedara T.T.
+    - **Name:** Magedara T.T. <br>
       **Student No:** EC/2020/079 
     
     <hr>
 
-    - **Name:** Jayangani H.A.A.
+    - **Name:** Jayangani H.A.A. <br>
       **Student No:** EC/2020/028
 
     <hr>
