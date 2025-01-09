@@ -94,20 +94,8 @@ def get_gemini_response(jd, resume_text):
     """
     # Request to the model
     model = genai.GenerativeModel('gemini-pro')
-    while True:  # Retry indefinitely
-        try:
-            response = model.generate_content(prompt)
-            response_text = response.text
-
-            # Attempt to parse the response to validate JSON format
-            json.loads(response_text)  # If this fails, it will raise an exception
-            return response_text  # Return the valid JSON response
-        except json.JSONDecodeError:
-            # Retry if the response is not valid JSON
-            st.warning("Wait...")
-        except Exception as e:
-            st.error(f"An error occurred: {e}")
-            return None  # Return None if a non-JSON related error occurs
+    response = model.generate_content(prompt)
+    return response.text
 
 def input_pdf_text(uploaded_file):
     # Extract text from uploaded PDF resume
